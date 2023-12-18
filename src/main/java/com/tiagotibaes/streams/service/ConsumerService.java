@@ -38,12 +38,8 @@ public class ConsumerService {
     )
     void onConsumer(Message in, MessageHandler.Context context) throws IOException {
         log.info("Stream partition message offset: {}", context.offset());
-        var login = objectMapper.readValue(in.getBodyAsBinary(), ApproveRequestDTO.class);
-        log.info("Consumer message: {}", login);
+        var approve = objectMapper.readValue(in.getBodyAsBinary(), ApproveRequestDTO.class);
+        log.info("Consumer message: {}", approve);
     }
-
-//    public Queue getCreatePartition() {
-//        return createPartition;
-//    }
 
 }

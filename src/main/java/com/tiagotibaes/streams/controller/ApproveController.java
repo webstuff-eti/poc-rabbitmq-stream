@@ -19,8 +19,8 @@ public class ApproveController {
     private final PublisherService publisher;
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> request(@RequestBody ApproveRequestDTO login) {
-        publisher.publisher(login);
+    public ResponseEntity<?> request(@RequestBody ApproveRequestDTO approve) {
+        publisher.publisher(approve);
         return ResponseEntity.noContent().build();
     }
 }
